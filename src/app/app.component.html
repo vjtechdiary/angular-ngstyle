@@ -1,0 +1,36 @@
+<!-- Attribute Directive ngStyle in Angular -->
+<!-- ngStyle in static way -->
+<!-- This will change the background color of the div to Grey -->
+<div [ngStyle]="{'background-color':'lightblue'}">VJ Tech Diary</div>
+
+<!-- The Above code snippet is equivalent to following HTML -->
+<div style="background-color: lightblue">VJ Tech Diary</div>
+
+<!-- ngStyle with multiple properties -->
+<div [ngStyle]="{'background-color':'#f0f0f0', 'padding':'1rem'}">VJ Tech Diary</div>
+
+<!-- The Above code snippet is equivalent to following HTML -->
+<div style="background-color: #f0f0f0; padding: 1rem">VJ Tech Diary</div>
+
+
+
+
+
+<!-- Applying ngStyle in dynamic nature based on some condition -->
+<div>Displying values from the Array courseArray.</div>
+<table>
+    <tr *ngFor="let course of courseArray">
+        <td [ngStyle]="{'background-color':course.id === 1 ? '#f0f0f0' : 'lightblue' }">Id : {{course.id}}</td>
+        <td [ngStyle]="{'background-color':course.name === 'HTML' ? '#f0f0f0' : 'lightblue' }">Name : {{course.name}}
+        </td>
+    </tr>
+</table>
+
+<!-- Applying ngStyle by passing a value from function -->
+<div>Displying values from the Array personArray.</div>
+<ul *ngFor="let person of personArray">
+    <li [ngStyle]="{'color':getColor(person.country)}"> {{ person.name }} ({{ person.country }})
+    </li>
+</ul>
+
+<router-outlet></router-outlet>
